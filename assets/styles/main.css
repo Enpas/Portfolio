@@ -120,11 +120,8 @@ a { text-decoration: none; }
 /* HEADER */
 header {
   position: fixed;
-  right: 0;
-  left: 0;
   width: 100%;
   z-index: 10;
-  mix-blend-mode: difference;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,6 +129,7 @@ header {
   -webkit-backdrop-filter: blur(10px);
   will-change: backdrop-filter;
   background-color: transparent;
+  mix-blend-mode: difference;
 }
 
 header ul li {
@@ -603,6 +601,11 @@ footer .copyright {
 /*  */
 @media (max-width: 1450px) {
 
+  header {
+    background-color: #000000b9;
+    mix-blend-mode: normal;
+  }
+
   #home .home-content h1 {
     font-size: var(--fontSize-home-h1-2);
   }
@@ -766,10 +769,6 @@ footer .copyright {
     padding: 10% 8.5%;
   }
 
-  .contacts-box .contacts-txt {
-    margin-bottom: 1em;
-  }
-
   .contacts-box span {
     font-size: var(--fontSize-contacts-span-2);
   }
@@ -916,10 +915,6 @@ footer .copyright {
 
   .contacts-box span {
     font-size: var(--fontSize-contacts-span-3);
-  }
-
-  .contacts-box .contacts-list {
-    margin-bottom: 0em;
   }
 
   .contacts-box .contacts-list a {
