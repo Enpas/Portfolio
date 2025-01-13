@@ -43,8 +43,7 @@
   /* TRANSIZIONI */
   --transition-1: 250ms ease;
   --transition-2: 500ms ease;
-  --transition-3: 1000ms ease;
-  --transition-height: height 1s ease-in-out; 
+  --transition-3: 1s ease-in-out; 
 
   /* ANIMAZIONI */
   --animation-1: rotate360 1s linear infinite;
@@ -70,7 +69,7 @@ body {
 
 ::-webkit-scrollbar { width: 5px; }
 
-::-webkit-scrollbar-track { background-color: transparent; } 
+::-webkit-scrollbar-track { background-color: var(--light) } 
 
 ::-webkit-scrollbar-thumb { background-color: var(--dark); }
 
@@ -257,13 +256,13 @@ header img {
   margin-right: 5em;
   border: 2px solid transparent;
   border-image: conic-gradient(
-      from var(--angle),
-      var(--dark) 0deg 90deg,
-      var(--light) 90deg 180deg,
-      var(--dark) 180deg 270deg,
-      var(--light) 270deg 360deg
-    )
-    1 stretch;
+    from var(--angle),
+    var(--dark) 0deg 90deg,
+    var(--light) 90deg 180deg,
+    var(--dark) 180deg 270deg,
+    var(--light) 270deg 360deg
+  )
+  1 stretch;
 }
 
 @property --angle {
@@ -320,8 +319,7 @@ header img {
 }
 
 #projects ul {
-  max-height: 100%;
-	max-width: 50%;
+  max-width: 50%;
 	margin: 5em auto 0;
 }
 
@@ -330,7 +328,6 @@ header img {
 }
 
 #projects label {
-	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr auto;
 	grid-template-rows: auto auto;
@@ -338,7 +335,7 @@ header img {
 	margin-bottom: 3em;
 	border-bottom: 2px solid white;
   cursor: pointer;
-	transition: var(--transition-2);
+	transition: var(--transition-3);
 }
 
 #projects label > h2 {
@@ -346,8 +343,8 @@ header img {
   font-weight: var(--weight-regular-1);
 	height: 1.5em;
 	overflow: hidden;
-	transition: var(--transition-height);
   text-align: left;
+  transition: var(--transition-3);
 }
 
 #projects label > .cube {
@@ -356,31 +353,33 @@ header img {
 
 #projects label > .vertical-slider {
 	grid-area: img;
-}
-
-#projects .vertical-slider {
-	margin-top: 1em;
-	overflow: hidden;
-	transition: all 0.9s;
-	height: 0;
+  margin: 1em 0 0 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: var(--transition-3);
 }
 
 #projects .box-img {
+  display: grid;
+  grid-template-rows: 0fr;
   position: relative;
+  overflow: hidden;
+  transition: var(--transition-3);
 }
 
 #projects input:checked + label > .vertical-slider {
-	transition: var(--transition-height);
-	height: 43em;
+  grid-template-rows: 1fr;
+  margin: 1em 0 1em 0;
+  transition: var(--transition-3);
 }
 
 #projects input:checked + label > h2 {
-	transition: var(--transition-height);
+	transition: var(--transition-3);
 }
 
 #projects input:not(:checked) + label > .vertical-slider {
-	transition: var(--transition-height);
-	height: 0;
+  grid-template-rows: 0fr;
 }
 
 #projects .cube {
@@ -394,29 +393,23 @@ header img {
 }
 
 @media (hover: hover) {
+  #projects input:not(:checked) + label:hover > .vertical-slider {
+    grid-template-rows: 1fr;
+    margin: 1em 0 1em 0;
+  }
 
-	#projects input:not(:checked) + label:hover > .vertical-slider {
-		transition: var(--transition-height);
-		height: 43em;
-	}
+  #projects input:not(:checked) + label:hover > h2 {
+    transition: var(--transition-3);
+  }
 
-	#projects input:not(:checked) + label:not(:hover) > .vertical-slider {
-		transition: var(--transition-height);
-		height: 0;
-	}
+  #projects input:not(:checked) + label:not(:hover) > h2 {
+    transition: var(--transition-3);
+    height: 1.5em;
+  }
 
-	#projects input:not(:checked) + label:hover > h2 {
-		transition: var(--transition-height);
-	}
-
-	#projects input:not(:checked) + label:not(:hover) > h2 {
-		transition: var(--transition-height);
-		height: 1.5em;
-	}
-
-	#projects input:not(:checked) + label:hover > .cube {
-		transform: rotate(225deg);
-	}
+  #projects input:not(:checked) + label:hover > .cube {
+    transform: rotate(225deg);
+  }
 }
 
 #projects .box-img .overlay {
@@ -436,8 +429,8 @@ header img {
 }
 
 #projects .box-img img {
-  height: 100%;
   width: 100%;
+  height: auto;
 }
 
 .projects-info {
@@ -540,11 +533,11 @@ header img {
   margin-top: 2em;
 }
 
-.contacts-content .contacts-list a {
+.contacts-content .contacts-list li {
   margin: 0 40px;
 }
 
-.contacts-content .contacts-list li {
+.contacts-content .contacts-list a {
   position: relative;
   display: flex;
   align-items: center;
@@ -553,7 +546,7 @@ header img {
   transition: var(--transition-2);
 }
 
-.contacts-content .contacts-list li::after {
+.contacts-content .contacts-list a::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -561,7 +554,7 @@ header img {
   animation: var(--animation-3);
 }
 
-.contacts-content .contacts-list li:hover {
+.contacts-content .contacts-list a:hover {
   cursor: pointer;
   background-color: var(--light);
 }
@@ -572,7 +565,7 @@ header img {
   transition: var(--transition-2);
 }
 
-.contacts-content .contacts-list li:hover img {
+.contacts-content .contacts-list a:hover img {
   filter: invert(0);
 }
 
@@ -607,7 +600,7 @@ footer .copyright {
   }
 
   #projects ul {
-    max-width: 65%;
+    max-width: 70%;
   }
 
 }
@@ -625,7 +618,7 @@ footer .copyright {
   }
 
   #projects ul {
-    max-width: 75%;
+    max-width: 100%;
   }
 
   #projects .projects-txt {
@@ -691,18 +684,6 @@ footer .copyright {
     margin: 0;
   }
 
-  #projects ul {
-    max-width: 100%;
-  }
-
-  #projects input:checked + label > .vertical-slider {
-    height: 32em;
-  }
-
-  #projects input:not(:checked) + label:hover > .vertical-slider {
-    height: 32em;
-  }
-
   .projects-info {
     padding: 0 1.5em 0 1.5em;
   }
@@ -754,14 +735,6 @@ footer .copyright {
     padding: 10% 8.5%;
   }
 
-  #projects input:checked + label > .vertical-slider {
-    height: 24em;
-  }
-
-  #projects input:not(:checked) + label:hover > .vertical-slider {
-    height: 24em;
-  }
-
   #contacts {
     padding: 10% 8.5%;
   }
@@ -770,7 +743,7 @@ footer .copyright {
     font-size: var(--fontSize-contacts-span-2);
   }
   
-  .contacts-content .contacts-list li {
+  .contacts-content .contacts-list a {
     padding: 15px;
   }
 
@@ -876,14 +849,6 @@ footer .copyright {
     margin-top: 1em;
   }
 
-  #projects input:checked + label > .vertical-slider {
-    height: 13em;
-  }
-
-  #projects input:not(:checked) + label:hover > .vertical-slider {
-    height: 13em;
-  }
-
   .projects-info p {
     display: none;
   }
@@ -914,7 +879,7 @@ footer .copyright {
     font-size: var(--fontSize-contacts-span-3);
   }
 
-  .contacts-content .contacts-list a {
+  .contacts-content .contacts-list li {
     margin: 0 25px;
   }
 
