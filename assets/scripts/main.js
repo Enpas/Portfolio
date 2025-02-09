@@ -14,7 +14,7 @@ window.addEventListener("load", function () {
   const typewriter = {
     typeValue: '',                // Il testo che viene scritto
     typeStatus: false,            // Stato che indica se il testo è in fase di scrittura o cancellazione
-    typeArray: ['Web Developer', 'Economist'], // Le frasi da scrivere
+    typeArray: ['Web Developer', 'SEO Specialist'], // Le frasi da scrivere
     typingSpeed: 100,             // Velocità di scrittura (in millisecondi)
     erasingSpeed: 100,            // Velocità di cancellazione (in millisecondi)
     newTextDelay: 1250,           // Ritardo prima di cancellare il testo scritto
@@ -92,10 +92,10 @@ window.addEventListener("load", function () {
   particlesJS('particles-js', {
     "particles": {
       "number": {
-        "value": 80,  // Numero di particelle
+        "value": 120,  // Numero di particelle
         "density": {
           "enable": true,
-          "value_area": 1200  // Densità delle particelle
+          "value_area": 1000  // Densità delle particelle
         }
       },
       "color": {
@@ -104,7 +104,7 @@ window.addEventListener("load", function () {
       "shape": {
         "type": "triangle",  // Tipo di forma delle particelle
         "polygon": {
-          "nb_sides": 5  // Numero di lati del triangolo
+          "nb_sides": 3  // Numero di lati del triangolo
         }
       },
       "opacity": {
@@ -127,7 +127,7 @@ window.addEventListener("load", function () {
       },
       "move": {
         "enable": true,  // Le particelle si muovono
-        "speed": 5,  // Velocità delle particelle
+        "speed": 2.5,  // Velocità delle particelle
         "direction": "none",  // Direzione casuale
         "out_mode": "bounce"  // Le particelle rimbalzano sui bordi del canvas
       }
@@ -154,7 +154,7 @@ window.addEventListener("load", function () {
           "speed": 3  // Velocità dell'effetto bubble
         },
         "repulse": {
-          "distance": 300  // Distanza di attivazione dell'effetto repulse
+          "distance": 200  // Distanza di attivazione dell'effetto repulse
         },
         "push": {
           "particles_nb": 4  // Numero di particelle aggiunte in modalità push

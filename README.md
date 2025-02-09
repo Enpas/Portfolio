@@ -2,6 +2,6 @@
 
 ![Anteprima del portfolio](assets/images/preview.jpg)
 
-Benvenuto nel mio portfolio, uno spazio dove mi presento e metto in evidenza le mie creazioni più rilevanti, che riflettono non solo le mie competenze tecniche, ma anche il mio percorso di crescita professionale. Ogni progetto è stato scelto per mostrare il mio impegno nel creare soluzioni efficaci, innovative e orientate agli utenti.
+Portfolio personale, uno spazio in cui presento le mie creazioni più rilevanti, realizzate con cura e dedizione nel corso degli anni. Troverai sia progetti professionali, sviluppati in collaborazione con team e clienti, sia lavori personali, nati dalla curiosità e dalla voglia di sperimentare. Ogni progetto è studiato nei minimi dettagli per garantire non solo un design moderno e intuitivo, ma anche un'esperienza utente fluida, accessibile e ottimizzata per ogni dispositivo.
 
 [Visita il mio portfolio](https://enniopascucci.netlify.app/)
